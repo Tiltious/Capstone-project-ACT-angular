@@ -1,0 +1,59 @@
+<form [formGroup]="propForm" (ngSubmit)="onSubmit()" class="form-group collapse p-3"id="signupform"action="">
+    <div class="row">
+        <div class="col-6">
+            <label for="postcat">Post Category</label>
+            <select class="form-control mb-2" name="postcat" formControlName="postcat">
+                <option value="rental">Rental</option>
+                <option value="sale">Sale</option>
+            </select>
+        </div>
+        <div class="col-6">
+            <label for="proptype">Property Type</label>
+            <select class="form-control mb-2" name="proptype" formControlName="proptype">
+                <option [ngValue]="type.proptype" *ngFor="let type of typeofproperty">{{type.proptype}}</option>
+            </select>
+        </div>
+        <div class="col-3 mb-2">
+            <label for="floor">Floor</label>
+            <input class="form-control" type="number" name="floor" min="0" max="15" formControlName="floor">
+        </div>
+        <div class="col-3 mb-2">
+            <label for="buildarea">House Size</label>
+            <input class="form-control" type="number" name="buildarea"  formControlName="housesize">
+        </div>
+        <div class="col-3 mb-2">
+            <label for="rooms">Rooms</label>
+            <input class="form-control" type="number" name="rooms"min="0" max="15"  formControlName="rooms">
+        </div>
+        <div class="col mb-2">
+            <label for="constdate">Year Build</label>
+            <input class="form-control" type="number" name="constdate" min="1955" max="2025"  formControlName="constdate">
+        </div>
+        <div class="col-12 mb-2">
+            <label for="price">Price</label>
+            <input class="form-control" type="number" min="0" step="5" name="price" value=""  formControlName="price">
+        </div>
+    </div>
+    <div formGroupName="address" class="row mb-2"> 
+        <div class="col-6 mb-2">
+            <label for="city">City</label>
+            <input class="form-control" type="text" name="city"  formControlName="city">
+        </div>
+        <div class="col-6 mb-2">
+            <label for="street">Street</label>
+            <input class="form-control" type="text" name="street"  formControlName="street">
+        </div>
+        <div class="col mb-2">
+            <label for="pincode">Pin Code</label>
+            <input class="form-control" type="text" name="pincode"  formControlName="pincode">
+        </div>
+    </div>
+    <div *ngIf="validated">
+        Invalid form
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-secondary" type="button" (click)="reset()">Reset</button>
+    </div>
+    
+</form>

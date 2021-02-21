@@ -1,0 +1,6 @@
+input.ng-dirty.ng-valid,select.ng-dirty.ng-valid{
+    border-left:4px solid rgb(89, 179, 0);
+}
+input.ng-dirty.ng-invalid ,select.ng-dirty.ng-invalid{
+    border-left:4px solid rgb(179, 0, 0);
+}

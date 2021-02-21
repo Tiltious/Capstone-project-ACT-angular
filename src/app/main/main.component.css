@@ -1,0 +1,15 @@
+header{
+    background-color: rgba(0, 0, 0, 0.548);
+    height:fit-content;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: 4px 4px 4px black;
+}
+header div.headcol{
+    margin:0px 5px 20px;
+    text-shadow: 3px 3px 3px rgb(12, 12, 12);
+    border-radius: 2%;
+}
+.headcol h2{
+    border-bottom: solid rgb(37, 37, 37) 2px;
+}

@@ -1,0 +1,19 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-group collapse text-white" id="reactform">
+    <div class="row">
+        <div class="col-12 mb-2">
+            <label for="email">Email</label>
+            <input type="email" name="email" value="" class="form-control" formControlName="email">
+            <div *ngIf="!email?.valid && (email?.dirty||email?.touched)">This type of e-mail address isn't valid.</div>            
+        </div>
+        <div class="col-12 mb-2">
+            <label for="password">Password</label>
+            <input type="password" name="password" value="" class="form-control"formControlName="password">
+            <div *ngIf="!password?.valid && (password?.dirty||password?.touched)">Invalid password</div>
+        </div>
+        <div class="col mb-2">
+            <label for="remember">Remember</label>
+            <input type="checkbox" name="remember" class="form-check"formControlName="remember">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
